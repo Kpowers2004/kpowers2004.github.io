@@ -12,329 +12,478 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f5f5f5;
         }
         
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Navigation */
+        nav {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%233498db" width="1200" height="600"/></svg>');
             color: white;
-            padding: 60px 40px;
+            padding: 120px 40px;
             text-align: center;
         }
         
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
         
-        .contact-info {
-            margin-top: 20px;
-            font-size: 1em;
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
         
-        .contact-info a {
+        .hero .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .hero .contact-links a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            transition: opacity 0.3s;
+            padding: 12px 30px;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: all 0.3s;
         }
         
-        .contact-info a:hover {
-            opacity: 0.8;
+        .hero .contact-links a:hover {
+            background: white;
+            color: #3498db;
         }
         
-        .content {
-            padding: 40px;
+        /* Content Sections */
+        .section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
         }
         
-        section {
-            margin-bottom: 40px;
+        .section h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
         }
         
-        h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+        .section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #3498db;
         }
         
-        .education-box, .experience-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
+        /* Timeline Style */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
         }
         
-        h3 {
-            color: #333;
-            font-size: 1.3em;
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #3498db;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -56px;
+            top: 30px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #3498db;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+        
+        .timeline-item h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item .company {
+            color: #3498db;
+            font-weight: 600;
             margin-bottom: 5px;
         }
         
-        .subtitle {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
+        .timeline-item .date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 15px;
         }
         
-        .date {
-            color: #764ba2;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        ul {
+        .timeline-item ul {
             margin-left: 20px;
-            margin-top: 10px;
         }
         
-        li {
-            margin-bottom: 8px;
+        .timeline-item li {
+            margin-bottom: 10px;
+            color: #555;
         }
         
-        .awards {
+        /* Education Card */
+        .education-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .education-card h3 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .education-card .degree {
+            color: #3498db;
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+        
+        .honors {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .award-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
         
-        .skill-category {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #764ba2;
+        .honor-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            border-left: 3px solid #3498db;
         }
         
-        .skill-category h4 {
-            color: #764ba2;
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .skill-box h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Activities Grid */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .activity-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .activity-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity-box h3 {
+            color: #2c3e50;
             margin-bottom: 10px;
         }
         
-        .activities-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+        .activity-box .role {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
-        .activity-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+        .activity-box .date {
+            color: #7f8c8d;
+            font-size: 0.9em;
         }
         
+        /* Footer */
         footer {
-            background: #333;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 40px;
+            margin-top: 80px;
         }
         
         @media (max-width: 768px) {
-            header h1 {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h2 {
                 font-size: 2em;
             }
             
-            .content {
-                padding: 20px;
+            .timeline {
+                padding-left: 30px;
             }
             
-            .contact-info a {
-                display: block;
-                margin: 10px 0;
+            .timeline-item:before {
+                left: -36px;
+            }
+            
+            .section {
+                padding: 0 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Katherine Powers</h1>
-            <p>Actuarial Mathematics Student | Data Analytics Enthusiast</p>
-            <div class="contact-info">
-                <a href="mailto:kpowers4@students.stonehill.edu">✉ kpowers4@students.stonehill.edu</a>
-                <a href="tel:860-916-4022">📱 860-916-4022</a>
-                <span>📍 West Hartford, CT</span>
-            </div>
-        </header>
-        
-        <div class="content">
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-box">
-                    <h3>Stonehill College</h3>
-                    <div class="subtitle">Easton, MA</div>
-                    <div class="date">Anticipated Graduation: May 2026</div>
-                    <p><strong>Bachelor of Arts</strong></p>
-                    <p><strong>Major:</strong> Actuarial Mathematics | <strong>Minors:</strong> Business & Data Analytics</p>
-                    <p><strong>GPA:</strong> 3.94 | Moreau Honors Scholar</p>
-                    <div class="awards">
-                        <span class="award-badge">Dean's List (6 semesters)</span>
-                        <span class="award-badge">Lambda Epsilon Sigma</span>
-                        <span class="award-badge">Kappa Mu Epsilon</span>
-                        <span class="award-badge">Shields Merit Scholarship</span>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="experience">
-                <h2>Work Experience</h2>
-                
-                <div class="experience-item">
-                    <h3>Product Management Intern (PMDP)</h3>
-                    <div class="subtitle">Travelers Insurance | Hartford, CT</div>
-                    <div class="date">June 2025 - August 2025</div>
-                    <ul>
-                        <li>Supported the Personal Insurance Mid-Atlantic team with a focus on Maryland and Virginia by conducting market research and policy analysis</li>
-                        <li>Completed a competitive intelligence project on Enhanced Uninsured Motorist rates to dive into potential competitor pricing differences</li>
-                        <li>Analyzed Virginia auto liability limit changes through post-monitoring efforts to evaluate business impact and uncover trends affecting risk exposure</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Calculus Teaching Assistant</h3>
-                    <div class="subtitle">Stonehill College</div>
-                    <div class="date">August 2024 - Present</div>
-                    <ul>
-                        <li>Conduct weekly sessions, provide practice problems, assist with homework questions, and review calculus concepts to help enhance students' understanding and performance</li>
-                        <li>Prepare practice problems and detailed solutions to help aid in any concepts that have a higher level of difficulty</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Cashier, Bakery Employee</h3>
-                    <div class="subtitle">Crown Market | West Hartford, CT</div>
-                    <div class="date">August 2021 - August 2023</div>
-                    <ul>
-                        <li>Managed cash and credit transactions, sorted aisles of the store, and assisted customers with in-store catering orders</li>
-                        <li>Maintained bakery orders of customers, boxed up pastries and bread orders, contributed to the sanitation of the bakery, and took closing inventory</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section id="leadership">
-                <h2>Leadership Experience</h2>
-                
-                <div class="experience-item">
-                    <h3>Her Campus Treasurer</h3>
-                    <div class="subtitle">Stonehill College</div>
-                    <div class="date">August 2024 - Present</div>
-                    <ul>
-                        <li>Attend bi-weekly meetings, contribute to brainstorming and writing, oversee financial needs, and publish two articles per semester on the Her Campus website</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>First Year Experience Facilitator</h3>
-                    <div class="subtitle">Stonehill College</div>
-                    <div class="date">August 2024 - Present</div>
-                    <ul>
-                        <li>Collaborate with faculty and peer facilitators to support first-year students by planning lessons, leading check-ins, and helping them navigate new challenges, connect with peers, and learn about campus resources</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Anchors Society Member</h3>
-                    <div class="subtitle">Stonehill College</div>
-                    <div class="date">September 2022 - Present</div>
-                    <ul>
-                        <li>Attend monthly meetings and participate in open discussion about the school's three core principles: think, act, and lead, and learn networking and communication skills to become courageous leaders</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>The Hartford Early Immersion Program - Participant</h3>
-                    <div class="subtitle">Hartford, CT</div>
-                    <div class="date">June 2024</div>
-                    <ul>
-                        <li>Completed a three-day program focused on professional development, networking with employees across departments, and exploring the insurance and financial services industry</li>
-                        <li>Collaborated in a team of six to develop and present an original insurance product through a case study project</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Disney Leadership Experience</h3>
-                    <div class="subtitle">Stonehill College</div>
-                    <div class="date">October 2023 - January 2024</div>
-                    <ul>
-                        <li>Accepted into program and attended weekly leadership classes and school retreats, and attended a program at Disneyland</li>
-                        <li>Participated in group projects and presentations on communication, networking, and leadership skills</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section id="activities">
-                <h2>Collegiate Activities</h2>
-                <div class="activities-list">
-                    <div class="activity-card">
-                        <h3>Projects for a Purpose</h3>
-                        <p><strong>Secretary</strong></p>
-                        <p class="date">August 2024 - Present</p>
-                    </div>
-                    <div class="activity-card">
-                        <h3>Relay for Life</h3>
-                        <p><strong>Secretary</strong></p>
-                        <p class="date">August 2024 - Present</p>
-                    </div>
-                    <div class="activity-card">
-                        <h3>Pinky Swear Club</h3>
-                        <p><strong>Member</strong></p>
-                        <p class="date">September 2022 - Present</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="skills">
-                <h2>Skills & Certifications</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Computer Skills</h4>
-                        <p>Google Workspace, Google Chrome, R Studio, Excel, PowerPoint, Stata</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Certifications</h4>
-                        <p>Bloomberg, Fintech Bootcamp</p>
-                    </div>
-                </div>
-            </section>
+    <nav>
+        <div class="container">
+            <h1>KP</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
         </div>
-        
-        <footer>
-            <p>&copy; 2025 Katherine Powers. All rights reserved.</p>
-        </footer>
-    </div>
+    </nav>
+    
+    <section class="hero">
+        <h2>Katherine Powers</h2>
+        <p>Actuarial Mathematics Student | Business & Data Analytics</p>
+        <div class="contact-links">
+            <a href="mailto:kpowers4@students.stonehill.edu">Email</a>
+            <a href="tel:860-916-4022">Phone</a>
+            <a href="#education">View Resume</a>
+        </div>
+    </section>
+    
+    <section class="section" id="education">
+        <h2>Education</h2>
+        <div class="education-card">
+            <h3>Stonehill College</h3>
+            <p>Easton, MA | Anticipated Graduation: May 2026</p>
+            <div class="degree">Bachelor of Arts in Actuarial Mathematics</div>
+            <p><strong>Minors:</strong> Business & Data Analytics</p>
+            <p><strong>GPA:</strong> 3.94 | Moreau Honors Scholar</p>
+            <div class="honors">
+                <span class="honor-tag">Dean's List - 6 Semesters</span>
+                <span class="honor-tag">Lambda Epsilon Sigma</span>
+                <span class="honor-tag">Kappa Mu Epsilon</span>
+                <span class="honor-tag">Shields Merit Scholarship</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="experience">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Product Management Intern (PMDP)</h3>
+                <div class="company">Travelers Insurance | Hartford, CT</div>
+                <div class="date">June 2025 - August 2025</div>
+                <ul>
+                    <li>Supported the Personal Insurance Mid-Atlantic team with a focus on Maryland and Virginia by conducting market research and policy analysis</li>
+                    <li>Completed a competitive intelligence project on Enhanced Uninsured Motorist rates to dive into potential competitor pricing differences</li>
+                    <li>Analyzed Virginia auto liability limit changes through post-monitoring efforts to evaluate business impact and uncover trends affecting risk exposure</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Calculus Teaching Assistant</h3>
+                <div class="company">Stonehill College</div>
+                <div class="date">August 2024 - Present</div>
+                <ul>
+                    <li>Conduct weekly sessions, provide practice problems, assist with homework questions, and review calculus concepts to help enhance students' understanding and performance</li>
+                    <li>Prepare practice problems and detailed solutions to help aid in any concepts that have a higher level of difficulty</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Cashier, Bakery Employee</h3>
+                <div class="company">Crown Market | West Hartford, CT</div>
+                <div class="date">August 2021 - August 2023</div>
+                <ul>
+                    <li>Managed cash and credit transactions, sorted aisles of the store, and assisted customers with in-store catering orders</li>
+                    <li>Maintained bakery orders of customers, boxed up pastries and bread orders, contributed to the sanitation of the bakery, and took closing inventory</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="leadership">
+        <h2>Leadership Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Her Campus Treasurer</h3>
+                <div class="company">Stonehill College</div>
+                <div class="date">August 2024 - Present</div>
+                <ul>
+                    <li>Attend bi-weekly meetings, contribute to brainstorming and writing, oversee financial needs, and publish two articles per semester on the Her Campus website</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>First Year Experience Facilitator</h3>
+                <div class="company">Stonehill College</div>
+                <div class="date">August 2024 - Present</div>
+                <ul>
+                    <li>Collaborate with faculty and peer facilitators to support first-year students by planning lessons, leading check-ins, and helping them navigate new challenges</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Anchors Society Member</h3>
+                <div class="company">Stonehill College</div>
+                <div class="date">September 2022 - Present</div>
+                <ul>
+                    <li>Attend monthly meetings and participate in open discussion about the school's three core principles: think, act, and lead</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>The Hartford Early Immersion Program</h3>
+                <div class="company">Hartford, CT</div>
+                <div class="date">June 2024</div>
+                <ul>
+                    <li>Completed a three-day program focused on professional development, networking with employees across departments, and exploring the insurance and financial services industry</li>
+                    <li>Collaborated in a team of six to develop and present an original insurance product through a case study project</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Disney Leadership Experience</h3>
+                <div class="company">Stonehill College</div>
+                <div class="date">October 2023 - January 2024</div>
+                <ul>
+                    <li>Attended weekly leadership classes and school retreats, and attended a program at Disneyland</li>
+                    <li>Participated in group projects and presentations on communication, networking, and leadership skills</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Collegiate Activities</h2>
+        <div class="activities-grid">
+            <div class="activity-box">
+                <h3>Projects for a Purpose</h3>
+                <div class="role">Secretary</div>
+                <div class="date">August 2024 - Present</div>
+            </div>
+            <div class="activity-box">
+                <h3>Relay for Life</h3>
+                <div class="role">Secretary</div>
+                <div class="date">August 2024 - Present</div>
+            </div>
+            <div class="activity-box">
+                <h3>Pinky Swear Club</h3>
+                <div class="role">Member</div>
+                <div class="date">September 2022 - Present</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="skills">
+        <h2>Skills & Certifications</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <h3>Computer Skills</h3>
+                <p>Google Workspace, Google Chrome, R Studio, Excel, PowerPoint, Stata</p>
+            </div>
+            <div class="skill-box">
+                <h3>Certifications</h3>
+                <p>Bloomberg, Fintech Bootcamp</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Katherine Powers. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.8;">West Hartford, CT | kpowers4@students.stonehill.edu | 860-916-4022</p>
+    </footer>
 </body>
 </html>
