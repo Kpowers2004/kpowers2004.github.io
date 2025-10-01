@@ -64,43 +64,81 @@
             background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%233498db" width="1200" height="600"/></svg>');
             color: white;
-            padding: 120px 40px;
+            padding: 60px 40px;
             text-align: center;
         }
         
         .hero h2 {
             font-size: 3em;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 300;
         }
         
         .hero p {
             font-size: 1.3em;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             opacity: 0.95;
         }
         
         .hero .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item:nth-child(1),
+        .contact-item:nth-child(2),
+        .contact-item:nth-child(3) {
+            grid-column: span 2;
+        }
+        
+        .contact-item:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+        
+        .contact-item:nth-child(5) {
+            grid-column: 4 / 6;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-label {
+            display: block;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            opacity: 0.9;
         }
         
         .hero .contact-links a,
         .hero .contact-links span {
             color: white;
             text-decoration: none;
-            padding: 12px 30px;
-            border: 2px solid white;
-            border-radius: 30px;
-            transition: all 0.3s;
-            display: inline-block;
+            font-size: 1em;
         }
         
         .hero .contact-links a:hover {
-            background: white;
-            color: #3498db;
+            text-decoration: underline;
         }
         
         /* Content Sections */
@@ -305,6 +343,10 @@
                 font-size: 2em;
             }
             
+            .hero .contact-links {
+                grid-template-columns: 1fr;
+            }
+            
             .timeline {
                 padding-left: 30px;
             }
@@ -337,9 +379,26 @@
         <h2>Katherine Powers</h2>
         <p>Actuarial Mathematics Student | Business & Data Analytics</p>
         <div class="contact-links">
-            <a href="mailto:kpowers4@students.stonehill.edu">kpowers4@students.stonehill.edu</a>
-            <span>860-916-4022</span>
-            <span>West Hartford, CT</span>
+            <div class="contact-item">
+                <span class="contact-label">School Email:</span>
+                <a href="mailto:kpowers4@students.stonehill.edu">kpowers4@students.stonehill.edu</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Personal Email:</span>
+                <a href="mailto:powerskatie619@gmail.com">powerskatie619@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Phone:</span>
+                <span>860-916-4022</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Location:</span>
+                <span>West Hartford, CT</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">LinkedIn:</span>
+                <a href="https://www.linkedin.com/in/katie-powers22/" target="_blank">linkedin.com/in/katie-powers22</a>
+            </div>
         </div>
     </section>
     
